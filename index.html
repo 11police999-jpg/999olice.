@@ -44,7 +44,6 @@
             width: 100%;
         }
 
-        /* شرطة منطقة الجوف أصبحت العنوان الرئيسي بالأعلى */
         header.main-header .main-dept-title {
             color: var(--gold-light);
             font-size: 2.2rem;
@@ -55,7 +54,6 @@
             line-height: 1.3;
         }
 
-        /* قوة المهمات والواجبات الخاصة تم تصغير حجمها قليلاً */
         header.main-header .top-sub-title {
             color: var(--gold-accent);
             font-size: 1.5rem;
@@ -321,12 +319,14 @@
 
         .welcome-screen.active { display: flex; }
 
+        /* تم تصغير حجم هذا العنوان هنا فقط بناءً على طلبك */
         .welcome-screen h1 {
-            font-size: 2.5rem;
+            font-size: 1.65rem;
             color: var(--gold-accent);
             margin-bottom: 2rem;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.9);
+            text-shadow: 0 4px 12px rgba(0,0,0,0.9);
             line-height: 1.4;
+            font-weight: 800;
         }
 
         .welcome-screen .btn {
@@ -783,7 +783,7 @@
         @media (max-width: 600px) {
             header.main-header .top-sub-title,
             header.main-header .main-dept-title { font-size: 1.6rem; }
-            .welcome-screen h1 { font-size: 1.9rem; }
+            .welcome-screen h1 { font-size: 1.4rem; }
             .card { padding: 1.4rem; }
             .form-row { grid-template-columns: 1fr; gap: 1rem; }
             .form-row.keep-two-cols { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
@@ -913,7 +913,7 @@
 
     <div class="container">
         
-        <!-- 1. شاشة الترحيب -->
+        <!-- 1. شاشة الترحيب (تم تصغير العنوان هنا فقط) -->
         <div id="view-welcome" class="view active welcome-screen">
             <h1>جاهزية العمليات الميدانية</h1>
             <button class="btn" onclick="switchView('view-hub')">دخول</button>
