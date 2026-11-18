@@ -319,7 +319,6 @@
 
         .welcome-screen.active { display: flex; }
 
-        /* تم تصغير حجم هذا العنوان هنا فقط بناءً على طلبك */
         .welcome-screen h1 {
             font-size: 1.65rem;
             color: var(--gold-accent);
@@ -433,13 +432,8 @@
         }
 
         .header-section::after {
-            content: '';
-            display: block;
-            width: 120px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #fbbf24, transparent);
-            margin: 10px auto 0;
-            border-radius: 2px;
+            display: none !important;
+            content: none !important;
         }
 
         .comp-title-support-row {
@@ -635,24 +629,35 @@
 
         .teams-display {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            font-size: 1.4rem;
+            gap: 18px;
+            font-size: 1.45rem;
             font-weight: 900;
             margin: 15px 0;
             color: #ffffff;
         }
 
-        .team-name { flex: 1; word-break: break-word; }
-        .team-name:first-child { text-align: right; }
-        .team-name:last-child { text-align: left; }
+        .team-name {
+            flex: 1;
+            word-break: break-word;
+        }
+
+        .team-name:first-child {
+            text-align: left;
+        }
+
+        .team-name:last-child {
+            text-align: right;
+        }
 
         .team-vs {
             color: #fbbf24;
-            margin: 0 12px;
-            font-size: 1.5rem;
+            margin: 0 6px;
+            font-size: 1.55rem;
             font-style: italic;
             font-weight: 900;
+            flex-shrink: 0;
         }
 
         .meta-grid {
@@ -773,11 +778,15 @@
         }
 
         .signature-line {
-            border-top: 2px solid var(--text-pure);
-            width: 240px;
+            border-top: none !important;
+            width: auto;
+            min-width: 200px;
             margin-top: 2rem;
             text-align: center;
             padding-top: 0.4rem;
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: var(--gold-light);
         }
 
         @media (max-width: 600px) {
@@ -850,19 +859,56 @@
             }
 
             .header-section {
-                margin-bottom: 14px !important;
+                margin-bottom: 18px !important;
+            }
+
+            .header-section::after {
+                display: none !important;
+                content: none !important;
             }
 
             .header-section h2 {
                 display: block !important;
-                font-size: 1.6rem !important;
+                font-size: 2.3rem !important;
                 color: #fbbf24 !important;
+                font-weight: 900 !important;
+                margin-bottom: 8px !important;
+                line-height: 1.2 !important;
+            }
+
+            .header-section h3,
+            .comp-title-support-row h3 {
+                font-size: 1.75rem !important;
+                color: #ffffff !important;
+                font-weight: 900 !important;
+                margin-top: 4px !important;
+            }
+
+            .support-print-badge {
+                font-size: 1.35rem !important;
+                padding: 5px 16px !important;
             }
 
             .global-date-banner {
                 padding: 8px 15px !important;
                 margin-bottom: 14px !important;
-                font-size: 1rem !important;
+                font-size: 1.05rem !important;
+            }
+
+            .teams-display {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 16px !important;
+                font-size: 1.5rem !important;
+            }
+
+            .team-name:first-child {
+                text-align: left !important;
+            }
+
+            .team-name:last-child {
+                text-align: right !important;
             }
 
             .strength-cards-grid {
@@ -881,12 +927,20 @@
             .print-table th,
             .print-table td {
                 padding: 0.45rem 0.6rem !important;
-                font-size: 0.9rem !important;
+                font-size: 0.95rem !important;
             }
 
             .print-footer {
-                margin-top: 1.5rem !important;
+                margin-top: 1.8rem !important;
                 display: flex !important;
+            }
+
+            /* تعيين لون أبيض ناصع لعبارة شرطة منطقة الجوف عند الطباعة */
+            .signature-line {
+                border-top: none !important;
+                font-size: 1.3rem !important;
+                font-weight: 900 !important;
+                color: #ffffff !important;
             }
         }
     </style>
@@ -913,7 +967,7 @@
 
     <div class="container">
         
-        <!-- 1. شاشة الترحيب (تم تصغير العنوان هنا فقط) -->
+        <!-- 1. شاشة الترحيب -->
         <div id="view-welcome" class="view active welcome-screen">
             <h1>جاهزية العمليات الميدانية</h1>
             <button class="btn" onclick="switchView('view-hub')">دخول</button>
